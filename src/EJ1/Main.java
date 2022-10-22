@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Lugar lugar = new Lugar();
         Buque buque = new Buque(lugar);
-        Auto[] autos = new Auto[30];
+        int n = 50; //cantidad de autos
+        Auto[] autos = new Auto[n];
         crear_autos(autos, lugar);
         activar_hilos(autos);
         buque.start();

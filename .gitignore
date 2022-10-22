@@ -2,6 +2,7 @@
 *.class
 bin/
 .vscode/
+lib/
 
 # Log file
 *.log

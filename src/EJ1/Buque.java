@@ -12,9 +12,11 @@ public class Buque extends Thread{
     @Override
     public void run() {
         while (true){
-            if(lugares.esta_lleno()){
+            if(lugares.esta_lleno()){ //solo sale si está lleno
                 ir();
                 lugares.descargar();
+                volver();
+                lugares.avisar_llegada();;
             }
         }
     }
@@ -23,7 +25,7 @@ public class Buque extends Thread{
         System.out.println("Buque cruzando...");
         Random r = new Random();
         try {
-            sleep(r.nextInt(100));
+            sleep(r.nextInt(1000));
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -31,6 +33,14 @@ public class Buque extends Thread{
     }
 
     public void volver(){
+        System.out.println("Buque volviendo...");
+        Random r = new Random();
+        try {
+            sleep(r.nextInt(1000));
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 

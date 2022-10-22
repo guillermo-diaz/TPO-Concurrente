@@ -12,6 +12,7 @@ public class Lugar {
         return espacio_ocupado == TAM;
     }
 
+
     public synchronized void subir(){
         while (espacio_ocupado == TAM){
             try {
@@ -30,6 +31,17 @@ public class Lugar {
     public synchronized void descargar(){
         System.out.println("Buque ha descargado");
         espacio_ocupado = 0;
+    }
+
+    public synchronized void avisar_llegada(){
+        System.out.println("Buque volvió al puerto");
         this.notifyAll();
+
+        /* 
+        //avisar a una cantidad de autos
+        for (int i = 0; i < TAM; i++) {
+            this.notify();
+        }
+        */
     }
 }
