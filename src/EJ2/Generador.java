@@ -17,19 +17,20 @@ public class Generador extends Thread {
         while (true) {
             int v = r.nextInt(2);
 
+            //genera atomos aleatorios
             if (v == 0) {
-                Thread h1 = new Oxigeno(reci);
-                h1.start();
+                Thread h = new Hidrogeno(reci);
+                h.start();
             } else {
-                Thread h2 = new Hidrogeno(reci);
-                h2.start();
+                Thread h = new Oxigeno(reci);
+                h.start();
             }
 
-            //System.out.println("aaaaaaaaaaaaaaaaaa");
+            
             if (reci.hayAtomosSuficientes()) {
 
-                System.out.println("se puede crear una molecula de agua");
-                reci.avisar();
+                System.out.println("Se puede crear una molecula de agua");
+                reci.avisar(); //avisa a los hilos que se puede crear agua
                
             }
 

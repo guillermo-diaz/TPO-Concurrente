@@ -2,12 +2,13 @@ package EJ2;
 
 public class Main {
     public static void main(String[] args) {
-        Recipiente r = new Recipiente();
-        Generador gen = new Generador(r);
+        Recipiente reci = new Recipiente();
+        Generador gen = new Generador(reci);
         gen.start();
 
-        while (true){
-            r.vaciarRecipiente();
+        while (true){ //controla  si el recipiente se llena
+           
+            reci.vaciarRecipiente();
         }
     }
 }
